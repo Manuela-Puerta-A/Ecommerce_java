@@ -42,5 +42,15 @@ public class Main {
             }
         }
         System.out.println("Total electronicos: $" + carritoElectronicos.calcularTotal());
+
+    // Recorrido propio que excluye los elementos en posicion par (2do, 4to...)
+        System.out.println();
+        System.out.println("--- Carrito general SIN elementos pares ---");
+    Iterator<Producto> itSinPares = carrito.iteradorSinPares();
+    int numero = 1;
+        while (itSinPares.hasNext()) {
+        Producto p = itSinPares.next();
+        System.out.println("Elemento " + numero + ": " + p.getNombre());
+        numero = numero + 2;
     }
-}
+}}
