@@ -45,12 +45,12 @@ public class Main {
 
     // Recorrido propio que excluye los elementos en posicion par (2do, 4to...)
         System.out.println();
-        System.out.println("--- Carrito general SIN elementos pares ---");
-    Iterator<Producto> itSinPares = carrito.iteradorSinPares();
-    int numero = 1;
-        while (itSinPares.hasNext()) {
-        Producto p = itSinPares.next();
-        System.out.println("Elemento " + numero + ": " + p.getNombre());
-        numero = numero + 2;
-    }
+        System.out.println("--- Carrito general: solo elementos PARES ---");
+        Iterator<Producto> itPares = carrito.iteradorPares();
+        int numero = 0;
+        while (itPares.hasNext()) {
+            Producto p = itPares.next();
+            System.out.println("Elemento " + numero + ": " + p.getNombre());
+            numero = numero + 2;
+        }
 }}

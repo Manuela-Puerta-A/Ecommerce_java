@@ -8,14 +8,18 @@ import java.util.NoSuchElementException;
 public class IteradorCarrito<T> implements Iterator<T> {
 
     private ArrayList<T> productos;
-    private int posicion = 0;        // indice del siguiente producto a devolver
-    private boolean excluirPares;    // true = salta los elementos en posicion par
+    private int posicion = 0;        // indice del siguiente producto a devolverprivate boolean excluirPares;    // true = salta los elementos en posicion par
+    private boolean soloPares;       // true = devuelve solo los elementos en posicion par
 
     public IteradorCarrito(ArrayList<T> productos) {
         this.productos = productos;
-        this.excluirPares = excluirPares;
+        this.soloPares = soloPares;
+        if (soloPares) {
+            posicion = 1;   // empieza en el 2do elemento (indice 1)
+        } else {
+            posicion = 0;   // empieza en el 1er elemento (indice 0)
+        }
     }
-
     @Override
     public boolean hasNext() {
         return posicion < productos.size();
@@ -27,8 +31,8 @@ public class IteradorCarrito<T> implements Iterator<T> {
             throw new NoSuchElementException("No hay mas productos en el carrito");
         }
         T producto = productos.get(posicion);
-        if (excluirPares) {
-            posicion = posicion + 2;   // salta el siguiente (el de posicion par)
+        if (soloPares) {
+            posicion = posicion + 2;   // salta el impar y cae en el siguiente par
         } else {
             posicion = posicion + 1;   // recorrido normal
         }

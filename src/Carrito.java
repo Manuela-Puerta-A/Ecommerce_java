@@ -46,10 +46,8 @@ public class Carrito<T extends productosI> implements Iterable<T> {
         return new IteradorCarrito<>(productos);
     }
 
-    // 5. Recorrido propio que excluye los elementos en posicion par
-    public Iterator<T> iteradorSinPares() {
-        return new IteradorCarrito<>(productos);    // salta los pares
+    public Iterator<T> iteradorPares() {
+        return new IteradorCarrito<>(productos);    // solo los pares
     }
-
 
 }
