@@ -25,6 +25,6 @@ public class IteradorCarrito<T> implements Iterator<T> {
         }
         T producto = productos.get(posicion);
         posicion++;
-
+        return producto;
     }
 }
