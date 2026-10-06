@@ -3,7 +3,7 @@ import java.util.Iterator;
 public class Main {
     public static void main(String[] args) {
 
-        // ===== CARRITO GENERAL: acepta Producto y tambien ProductoElectronico =====
+        //  CARRITO GENERAL: acepta Producto y tambien ProductoElectronico
         Carrito<Producto> carrito = new Carrito<>();
 
         carrito.agregarProducto(new Producto("Libro Cien anios de soledad", 45000, 2));
@@ -24,12 +24,11 @@ public class Main {
         }
         System.out.println("Total carrito general: $" + carrito.calcularTotal());
 
-        // ===== CARRITO SOLO DE ELECTRONICOS =====
+        //  CARRITO SOLO DE ELECTRONICOS
         Carrito<ProductoElectronico> carritoElectronicos = new Carrito<>();
 
         carritoElectronicos.agregarProducto(new ProductoElectronico("Celular", 1200000, 1, "Samsung", 12));
         carritoElectronicos.agregarProducto(new ProductoElectronico("Smart TV", 1800000, 1, "LG", 18));
-        // carritoElectronicos.agregarProducto(new Producto("Libro", 45000, 1)); // ERROR: no es electronico
 
         System.out.println();
         System.out.println("--- Carrito de electronicos (recorrido con for-each) ---");

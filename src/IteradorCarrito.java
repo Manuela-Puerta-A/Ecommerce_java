@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
 public class IteradorCarrito<T> implements Iterator<T> {
 
     private ArrayList<T> productos;
-    private int posicion = 0;        // indice del siguiente producto a devolverprivate boolean excluirPares;    // true = salta los elementos en posicion par
+    private int posicion = 0;        // indice del siguiente producto a devolverprivate boolean excluirPares;
     private boolean soloPares;       // true = devuelve solo los elementos en posicion par
 
     public IteradorCarrito(ArrayList<T> productos) {
